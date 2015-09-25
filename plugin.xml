@@ -71,7 +71,7 @@
       <merges target="" />
 	</js-module>
 	
-	<config-file target="package.appxmanifest" parent="/manifest/application">
+	<config-file target="package.appxmanifest" parent="/Package/Applications/Application">
 		<Extensions>
 		  <m2:Extension Category="windows.appointmentsProvider">
 			<m2:AppointmentsProvider>
