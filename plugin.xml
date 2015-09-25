@@ -64,4 +64,27 @@
     <source-file src="src/android/nl/xservices/plugins/accessor/LegacyCalendarAccessor.java"
                  target-dir="src/nl/xservices/plugins/accessor"/>
   </platform>
+  
+  <!-- windows -->
+  <platform name="windows">
+    <js-module src="src/windows/CalendarProxy.js" name="CalendarProxy">
+      <merges target="" />
+	</js-module>
+	
+	<config-file target="package.appxmanifest" parent="/manifest/application">
+		<Extensions>
+		  <m2:Extension Category="windows.appointmentsProvider">
+			<m2:AppointmentsProvider>
+			  <m2:AppointmentsProviderLaunchActions>
+				<m2:LaunchAction Verb="addAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
+				<m2:LaunchAction Verb="replaceAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
+				<m2:LaunchAction Verb="removeAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
+				<m2:LaunchAction Verb="showTimeFrame" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
+			  </m2:AppointmentsProviderLaunchActions>
+			</m2:AppointmentsProvider>
+		  </m2:Extension>
+		</Extensions>
+	</config-file>
+  </platform>
+  
 </plugin>
