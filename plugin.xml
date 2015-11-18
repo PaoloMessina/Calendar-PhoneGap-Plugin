@@ -71,19 +71,12 @@
       <merges target="" />
 	</js-module>
 	
-	<config-file target="package.appxmanifest" parent="/Package/Applications/Application">
-		<Extensions>
-		  <m2:Extension Category="windows.appointmentsProvider">
-			<m2:AppointmentsProvider>
-			  <m2:AppointmentsProviderLaunchActions>
-				<m2:LaunchAction Verb="addAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
-				<m2:LaunchAction Verb="replaceAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
-				<m2:LaunchAction Verb="removeAppointment" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
-				<m2:LaunchAction Verb="showTimeFrame" Executable="Appointments.exe" EntryPoint="Appointments.App"/>
-			  </m2:AppointmentsProviderLaunchActions>
-			</m2:AppointmentsProvider>
-		  </m2:Extension>
-		</Extensions>
+	<config-file target="package.phone.appxmanifest" parent="/Package/Capabilities">
+		<m3:Capability Name="appointments" />
+	</config-file>
+	
+	<config-file target="package.appxmanifest" parent="/Package/Capabilities" versions=">=10.0.0">
+		<uap:Capability Name="appointments" />
 	</config-file>
   </platform>
   
